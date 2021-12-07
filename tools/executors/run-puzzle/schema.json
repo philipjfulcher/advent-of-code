@@ -1,0 +1,14 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "type": "object",
+    "cli": "nx",
+    "properties": {
+        "puzzle": {
+            "type": "number",
+            "description": "Puzzle to run"
+        }
+    },
+    "required": [
+        "puzzle"
+    ]
+}

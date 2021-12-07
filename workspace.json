@@ -1,4 +1,6 @@
 {
   "version": 2,
-  "projects": {}
+  "projects": {
+    "day-01": "libs/day-01"
+  }
 }

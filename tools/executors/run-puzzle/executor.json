@@ -1,0 +1,9 @@
+{
+    "executors": {
+      "run-puzzle": {
+        "implementation": "./impl",
+        "schema": "./schema.json",
+        "description": "Runs an Advent of Code puzzle for a given day"
+      }
+    }
+  }
