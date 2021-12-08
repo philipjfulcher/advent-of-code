@@ -1,6 +1,8 @@
 {
   "version": 2,
   "projects": {
-    "day-01": "libs/day-01"
+    "day-01": "libs/day-01",
+    "day-05": "libs/day-05",
+    "util-arrays": "libs/util-arrays"
   }
 }

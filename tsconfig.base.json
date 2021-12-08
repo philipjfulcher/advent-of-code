@@ -15,7 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@advent-of-code-2021-nx/day-01": ["libs/day-01/src/index.ts"]
+      "@advent-of-code-2021-nx/day-01": ["libs/day-01/src/index.ts"],
+      "@advent-of-code-2021-nx/day-05": ["libs/day-05/src/index.ts"],
+      "@advent-of-code-2021-nx/util-arrays": ["libs/util-arrays/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

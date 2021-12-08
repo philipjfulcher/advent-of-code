@@ -8,10 +8,9 @@ import {
   joinPathFragments,
 } from '@nrwl/devkit';
 import { libraryGenerator } from '@nrwl/workspace/generators';
-import { join } from 'path';
 
 export default async function (tree: Tree, schema: any) {
-  const projectName = `day-${schema.day}`;
+  const projectName = `day-${schema.day.toString().padStart(2, '0')}`;
   await libraryGenerator(tree, { name: projectName, tags: 'type:day' });
   const projectConfig = readProjectConfiguration(tree, projectName);
 
@@ -37,8 +36,8 @@ export default async function (tree: Tree, schema: any) {
     } // config object to replace variable in file templates
   );
 
-  tree.delete(joinPathFragments(srcRoot,`${projectName}.ts`))
-  tree.delete(joinPathFragments(srcRoot,`${projectName}.spec.ts`))
+  tree.delete(joinPathFragments(srcRoot, `${projectName}.ts`));
+  tree.delete(joinPathFragments(srcRoot, `${projectName}.spec.ts`));
 
   await formatFiles(tree);
   return () => {
