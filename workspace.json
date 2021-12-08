@@ -3,6 +3,7 @@
   "projects": {
     "day-01": "libs/day-01",
     "day-05": "libs/day-05",
+    "day-06": "libs/day-06",
     "util-arrays": "libs/util-arrays"
   }
 }
