@@ -4,6 +4,8 @@
     "day-01": "libs/day-01",
     "day-05": "libs/day-05",
     "day-06": "libs/day-06",
-    "util-arrays": "libs/util-arrays"
+    "day-07": "libs/day-07",
+    "util-arrays": "libs/util-arrays",
+    "util-math": "libs/util-math"
   }
 }
