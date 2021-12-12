@@ -1,5 +1,6 @@
 export interface Matrix<CellType> {
   data: CellType[][];
+  size: () => { height: number; width: number };
   getCellValue: (x: number, y: number) => CellType | null;
   setCellValue: (x: number, y: number, value: CellType) => void;
 
@@ -10,11 +11,17 @@ export interface Matrix<CellType> {
 export function createMatrix<CellType>(data: CellType[][]): Matrix<CellType> {
   return {
     data,
-    getCellValue: function (this: Matrix<CellType>, x: number, y: number) {
-      return this.data?.[y]?.[x] ?? null;
+    size: function (this: Matrix<CellType>) {
+      return {
+        height: this.getRows().length,
+        width: this.getColumns().length,
+      };
     },
-    setCellValue: function (x: number, y: number, value: CellType) {
-      data[y][x] = value;
+    getCellValue: function (this: Matrix<CellType>, row: number, col: number) {
+      return this.data?.[row]?.[col] ?? null;
+    },
+    setCellValue: function (row: number, col: number, value: CellType) {
+      data[row][col] = value;
     },
     getRows: function (this: Matrix<CellType>) {
       return this.data;

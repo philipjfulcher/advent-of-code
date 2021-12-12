@@ -8,9 +8,9 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "target": "es2015",
+    "target": "es2019",
     "module": "esnext",
-    "lib": ["es2017", "dom"],
+    "lib": ["es2019", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
@@ -20,6 +20,7 @@
       "@advent-of-code-2021-nx/day-06": ["libs/day-06/src/index.ts"],
       "@advent-of-code-2021-nx/day-07": ["libs/day-07/src/index.ts"],
       "@advent-of-code-2021-nx/day-08": ["libs/day-08/src/index.ts"],
+      "@advent-of-code-2021-nx/day-09": ["libs/day-09/src/index.ts"],
       "@advent-of-code-2021-nx/util-arrays": ["libs/util-arrays/src/index.ts"],
       "@advent-of-code-2021-nx/util-math": ["libs/util-math/src/index.ts"]
     }
