@@ -7,7 +7,7 @@ import {
   generateFiles,
   joinPathFragments,
 } from '@nrwl/devkit';
-import { libraryGenerator } from '@nrwl/workspace/generators';
+import { libraryGenerator } from '@nrwl/node';
 
 export default async function (tree: Tree, schema: any) {
   const projectName = `day-${schema.day.toString().padStart(2, '0')}`;
