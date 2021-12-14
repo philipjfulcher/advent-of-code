@@ -21,6 +21,7 @@
       "@advent-of-code-2021-nx/day-07": ["libs/day-07/src/index.ts"],
       "@advent-of-code-2021-nx/day-08": ["libs/day-08/src/index.ts"],
       "@advent-of-code-2021-nx/day-09": ["libs/day-09/src/index.ts"],
+      "@advent-of-code-2021-nx/day-10": ["libs/day-10/src/index.ts"],
       "@advent-of-code-2021-nx/util-arrays": ["libs/util-arrays/src/index.ts"],
       "@advent-of-code-2021-nx/util-math": ["libs/util-math/src/index.ts"]
     }
