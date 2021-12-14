@@ -1,0 +1,27 @@
+{
+  "root": "libs/day-11",
+  "sourceRoot": "libs/day-11/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/day-11/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/day-11"],
+      "options": {
+        "jestConfig": "libs/day-11/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "run-puzzle": {
+      "executor": "./tools/executors/run-puzzle:run-puzzle",
+      "options": {}
+    }
+  },
+  "tags": ["type:day"]
+}
