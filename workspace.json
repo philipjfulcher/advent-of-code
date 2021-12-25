@@ -9,7 +9,9 @@
     "day-09": "libs/day-09",
     "day-10": "libs/day-10",
     "day-11": "libs/day-11",
+    "day-12": "libs/day-12",
     "util-arrays": "libs/util-arrays",
+    "util-graphs": "libs/util-graphs",
     "util-math": "libs/util-math"
   }
 }
