@@ -86,6 +86,7 @@ export function createMatrix<CellType>(data: CellType[][]): Matrix<CellType> {
       return this.data[row][col];
     },
     setCellValue: function (row: number, col: number, value: CellType) {
+      // console.log(`Setting row,col: ${row},${col}`)
       data[row][col] = value;
     },
     getRows: function (this: Matrix<CellType>) {
