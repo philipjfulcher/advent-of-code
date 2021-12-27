@@ -9,3 +9,4 @@ export function calculateMin(numbers: number[]): number | null {
     }
   }, null);
 }
+

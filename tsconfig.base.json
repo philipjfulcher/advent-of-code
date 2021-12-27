@@ -25,6 +25,7 @@
       "@advent-of-code-2021-nx/day-11": ["libs/day-11/src/index.ts"],
       "@advent-of-code-2021-nx/day-12": ["libs/day-12/src/index.ts"],
       "@advent-of-code-2021-nx/day-13": ["libs/day-13/src/index.ts"],
+      "@advent-of-code-2021-nx/day-14": ["libs/day-14/src/index.ts"],
       "@advent-of-code-2021-nx/util-arrays": ["libs/util-arrays/src/index.ts"],
       "@advent-of-code-2021-nx/util-graphs": ["libs/util-graphs/src/index.ts"],
       "@advent-of-code-2021-nx/util-math": ["libs/util-math/src/index.ts"]
