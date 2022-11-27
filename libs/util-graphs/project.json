@@ -1,5 +1,6 @@
 {
-  "root": "libs/util-graphs",
+  "name": "util-graphs",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/util-graphs/src",
   "projectType": "library",
   "targets": {
@@ -12,9 +13,9 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/util-graphs"],
+      "outputs": ["{workspaceRoot}/coverage/libs/util-graphs"],
       "options": {
-        "jestConfig": "libs/util-graphs/jest.config.js",
+        "jestConfig": "libs/util-graphs/jest.config.ts",
         "passWithNoTests": true
       }
     }

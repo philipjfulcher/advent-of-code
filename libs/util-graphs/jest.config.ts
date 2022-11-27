@@ -1,5 +1,6 @@
-module.exports = {
-  displayName: 'util-arrays',
+/* eslint-disable */
+export default {
+  displayName: 'util-graphs',
   preset: '../../jest.preset.js',
   globals: {
     'ts-jest': {
@@ -10,5 +11,5 @@ module.exports = {
     '^.+\\.[tj]sx?$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../coverage/libs/util-arrays',
+  coverageDirectory: '../../coverage/libs/util-graphs',
 };

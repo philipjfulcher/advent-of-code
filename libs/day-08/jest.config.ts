@@ -1,5 +1,6 @@
-module.exports = {
-  displayName: 'day-01',
+/* eslint-disable */
+export default {
+  displayName: 'day-08',
   preset: '../../jest.preset.js',
   globals: {
     'ts-jest': {
@@ -10,5 +11,5 @@ module.exports = {
     '^.+\\.[tj]sx?$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../coverage/libs/day-01',
+  coverageDirectory: '../../coverage/libs/day-08',
 };

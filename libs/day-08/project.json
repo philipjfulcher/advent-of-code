@@ -1,5 +1,6 @@
 {
-  "root": "libs/day-08",
+  "name": "day-08",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/day-08/src",
   "projectType": "library",
   "targets": {
@@ -12,9 +13,9 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/day-08"],
+      "outputs": ["{workspaceRoot}/coverage/libs/day-08"],
       "options": {
-        "jestConfig": "libs/day-08/jest.config.js",
+        "jestConfig": "libs/day-08/jest.config.ts",
         "passWithNoTests": true
       }
     },

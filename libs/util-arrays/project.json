@@ -1,5 +1,6 @@
 {
-  "root": "libs/util-arrays",
+  "name": "util-arrays",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/util-arrays/src",
   "projectType": "library",
   "targets": {
@@ -12,9 +13,9 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/util-arrays"],
+      "outputs": ["{workspaceRoot}/coverage/libs/util-arrays"],
       "options": {
-        "jestConfig": "libs/util-arrays/jest.config.js",
+        "jestConfig": "libs/util-arrays/jest.config.ts",
         "passWithNoTests": true
       }
     }

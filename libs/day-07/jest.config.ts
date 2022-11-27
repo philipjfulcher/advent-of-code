@@ -1,15 +1,15 @@
-module.exports = {
-  displayName: 'day-13',
+/* eslint-disable */
+export default {
+  displayName: 'day-07',
   preset: '../../jest.preset.js',
   globals: {
     'ts-jest': {
       tsconfig: '<rootDir>/tsconfig.spec.json',
     },
   },
-  testEnvironment: 'node',
   transform: {
     '^.+\\.[tj]sx?$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../coverage/libs/day-13',
+  coverageDirectory: '../../coverage/libs/day-07',
 };
