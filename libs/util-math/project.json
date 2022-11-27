@@ -1,4 +1,5 @@
 {
+  "name": "util-math",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/util-math/src",
   "projectType": "library",
@@ -12,7 +13,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/util-math"],
+      "outputs": ["{workspaceRoot}/coverage/libs/util-math"],
       "options": {
         "jestConfig": "libs/util-math/jest.config.ts",
         "passWithNoTests": true

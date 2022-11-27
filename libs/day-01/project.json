@@ -1,4 +1,5 @@
 {
+  "name": "day-01",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/day-01/src",
   "projectType": "library",
@@ -12,7 +13,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/day-01"],
+      "outputs": ["{workspaceRoot}/coverage/libs/day-01"],
       "options": {
         "jestConfig": "libs/day-01/jest.config.ts",
         "passWithNoTests": true
