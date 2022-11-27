@@ -15,5 +15,6 @@
     "util-arrays": "libs/util-arrays",
     "util-graphs": "libs/util-graphs",
     "util-math": "libs/util-math"
-  }
+  },
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json"
 }

@@ -1,5 +1,6 @@
-module.exports = {
-  displayName: 'util-graphs',
+/* eslint-disable */
+export default {
+  displayName: 'util-math',
   preset: '../../jest.preset.js',
   globals: {
     'ts-jest': {
@@ -10,5 +11,5 @@ module.exports = {
     '^.+\\.[tj]sx?$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../coverage/libs/util-graphs',
+  coverageDirectory: '../../coverage/libs/util-math',
 };

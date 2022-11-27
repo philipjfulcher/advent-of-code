@@ -1,4 +1,5 @@
-module.exports = {
+/* eslint-disable */
+export default {
   displayName: 'day-10',
   preset: '../../jest.preset.js',
   globals: {
