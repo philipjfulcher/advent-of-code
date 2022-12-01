@@ -4,8 +4,8 @@
   "version": "0.0.1",
   "generators": {
     "day": {
-      "factory": "./src/generators/plugin/index",
-      "schema": "./src/generators/plugin/schema.json",
+      "factory": "./src/generators/day/index",
+      "schema": "./src/generators/day/schema.json",
       "description": "Generate a day for a given year and day"
     },
     "archive-days": {

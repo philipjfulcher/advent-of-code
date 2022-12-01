@@ -6,12 +6,12 @@
   "properties": {
     "day": {
       "type": "number",
-      "description": "Day number",
-      "$default": {
-        "$source": "argv",
-        "index": 0
-      }
+      "description": "Day number"
+    },
+    "year": {
+      "type": "number",
+      "description": "Year"
     }
   },
-  "required": ["day"]
+  "required": ["day","year"]
 }
