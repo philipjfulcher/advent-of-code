@@ -1,5 +1,5 @@
 import { Edge, Node, Element, DefaultDataSchema } from './interfaces';
-import { intersection } from '@advent-of-code-2021-nx/util-arrays';
+import { intersection } from '@advent-of-code/util-arrays';
 
 export class Graph<Data = DefaultDataSchema> {
   private elements = new Map<string, Element<Data>>();

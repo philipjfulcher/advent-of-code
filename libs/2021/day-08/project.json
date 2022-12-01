@@ -1,0 +1,36 @@
+{
+  "name": "2021-day-08",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/2021/day-08/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "libs/2021/day-08/**/*.ts"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/libs/2021/day-08"
+      ],
+      "options": {
+        "jestConfig": "libs/2021/day-08/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "run-puzzle": {
+      "executor": "@advent-of-code/plugin:run-puzzle",
+      "options": {}
+    }
+  },
+  "tags": [
+    "year:2021"
+  ]
+}
