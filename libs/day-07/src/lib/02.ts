@@ -6,7 +6,7 @@ import {
   calculateMedian,
   calculateMin,
   calculateMode,
-} from '@advent-of-code-2021-nx/util-math';
+} from '@advent-of-code/util-math';
 import {
   calculateFuelUse,
   calculateIncreasedFuelUse,

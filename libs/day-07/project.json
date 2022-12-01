@@ -20,7 +20,7 @@
       }
     },
     "run-puzzle": {
-      "executor": "./tools/executors/run-puzzle:run-puzzle",
+      "executor": "@advent-of-code/plugin:run-puzzle",
       "options": {}
     }
   },

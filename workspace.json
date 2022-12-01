@@ -12,6 +12,8 @@
     "day-12": "libs/day-12",
     "day-13": "libs/day-13",
     "day-14": "libs/day-14",
+    "plugin": "libs/plugin",
+    "plugin-e2e": "apps/plugin-e2e",
     "util-arrays": "libs/util-arrays",
     "util-graphs": "libs/util-graphs",
     "util-math": "libs/util-math"

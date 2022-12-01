@@ -1,5 +1,5 @@
 {
-  "npmScope": "advent-of-code-2021-nx",
+  "npmScope": "advent-of-code",
   "affected": {
     "defaultBase": "main"
   },

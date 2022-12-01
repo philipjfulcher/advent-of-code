@@ -1,6 +1,6 @@
 import { calculateAnswer } from './01';
 
-describe('day 05, exercise 01', () => {
+xdescribe('day 05, exercise 01', () => {
   it('should calculate answer with test data', async () => {
     const results = await calculateAnswer('test-input.txt');
 

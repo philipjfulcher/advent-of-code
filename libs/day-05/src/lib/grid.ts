@@ -1,4 +1,4 @@
-import { createMatrix } from '@advent-of-code-2021-nx/util-arrays';
+import { createMatrix } from '@advent-of-code/util-arrays';
 import { Line } from './interfaces';
 
 export function Grid(lines: Line[], drawDiagonals = false) {

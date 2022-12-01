@@ -1,4 +1,4 @@
-import { createMatrix, Matrix } from '@advent-of-code-2021-nx/util-arrays';
+import { createMatrix, Matrix } from '@advent-of-code/util-arrays';
 
 export class Sheet {
   private matrix: Matrix<boolean>;

@@ -1,4 +1,4 @@
-import { arrayMinMax, MinMax } from '@advent-of-code-2021-nx/util-arrays';
+import { arrayMinMax, MinMax } from '@advent-of-code/util-arrays';
 
 export function processPolymer(
   template: string,

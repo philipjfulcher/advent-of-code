@@ -1,7 +1,7 @@
 import { createInterface } from 'readline';
 import { createReadStream } from 'fs';
 import { join } from 'path';
-import { Edge, Graph, Node } from '@advent-of-code-2021-nx/util-graphs';
+import { Edge, Graph, Node } from '@advent-of-code/util-graphs';
 
 interface CaveData {
   size: 'big' | 'small' | 'edge';

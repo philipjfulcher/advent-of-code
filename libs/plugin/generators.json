@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "name": "plugin",
+  "version": "0.0.1",
+  "generators": {
+    "day": {
+      "factory": "./src/generators/plugin/index",
+      "schema": "./src/generators/plugin/schema.json",
+      "description": "Generate a day for a given year and day"
+    }
+  }
+}

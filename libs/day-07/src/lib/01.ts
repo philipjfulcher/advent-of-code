@@ -4,7 +4,7 @@ import { join } from 'path';
 import {
   calculateMedian,
   calculateMode,
-} from '@advent-of-code-2021-nx/util-math';
+} from '@advent-of-code/util-math';
 import { calculateFuelUse } from './calculate-fuel-use';
 
 export async function calculateAnswer(fileName: string) {

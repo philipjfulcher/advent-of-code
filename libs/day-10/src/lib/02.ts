@@ -2,7 +2,7 @@ import { createInterface } from 'readline';
 import { createReadStream } from 'fs';
 import { join } from 'path';
 import { parseBrackets } from './bracket-parser';
-import { calculateMedian } from '@advent-of-code-2021-nx/util-math';
+import { calculateMedian } from '@advent-of-code/util-math';
 
 export async function calculateAnswer(fileName: string) {
   const promise = new Promise((resolve) => {

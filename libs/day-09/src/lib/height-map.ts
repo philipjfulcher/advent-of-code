@@ -1,4 +1,4 @@
-import { createMatrix } from '@advent-of-code-2021-nx/util-arrays';
+import { createMatrix } from '@advent-of-code/util-arrays';
 
 export class HeightMap {
   matrix = createMatrix<number>(this.rows);
@@ -76,9 +76,9 @@ export class HeightMap {
 
     basins.sort((a, b) => b.length - a.length);
 
-    
+
     const top3Basins = basins.slice(0, 3);
-    
+
     top3Basins.forEach((basin, index) => {
       console.log(`basin #${index}, size ${basin.length}`);
     });

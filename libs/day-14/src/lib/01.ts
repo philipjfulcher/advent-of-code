@@ -2,7 +2,7 @@ import { createInterface } from 'readline';
 import { createReadStream } from 'fs';
 import { join } from 'path';
 import { processPolymer } from './polymer';
-import { MinMax } from '@advent-of-code-2021-nx/util-arrays';
+import { MinMax } from '@advent-of-code/util-arrays';
 
 export async function calculateAnswer(
   fileName: string,
