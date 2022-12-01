@@ -7,6 +7,11 @@
       "factory": "./src/generators/plugin/index",
       "schema": "./src/generators/plugin/schema.json",
       "description": "Generate a day for a given year and day"
+    },
+    "archive-days": {
+      "factory": "./src/generators/archive-days/generator",
+      "schema": "./src/generators/archive-days/schema.json",
+      "description": "archive-days generator"
     }
   }
 }

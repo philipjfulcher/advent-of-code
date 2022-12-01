@@ -9,6 +9,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular-devkit/schematics": "^15.0.2",
     "@nrwl/nx-plugin": "15.2.4",
     "@swc/helpers": "~0.4.11",
     "jest-environment-jsdom": "^29.3.1",

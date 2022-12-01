@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "cli": "nx",
+  "$id": "ArchiveDays",
+  "title": "",
+  "type": "object",
+  "properties": {
+    "year": {
+      "type": "number",
+      "description": "",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What year should the untagged days be archived to?"
+    }
+  },
+  "required": ["year"]
+}
