@@ -1,22 +1,22 @@
 {
   "version": 2,
   "projects": {
-    "day-01": "libs/day-01",
-    "day-05": "libs/day-05",
-    "day-06": "libs/day-06",
-    "day-07": "libs/day-07",
-    "day-08": "libs/day-08",
-    "day-09": "libs/day-09",
-    "day-10": "libs/day-10",
-    "day-11": "libs/day-11",
-    "day-12": "libs/day-12",
-    "day-13": "libs/day-13",
-    "day-14": "libs/day-14",
     "plugin": "libs/plugin",
     "plugin-e2e": "apps/plugin-e2e",
     "util-arrays": "libs/util-arrays",
     "util-graphs": "libs/util-graphs",
-    "util-math": "libs/util-math"
+    "util-math": "libs/util-math",
+    "2021-day-01": "libs/2021/day-01",
+    "2021-day-05": "libs/2021/day-05",
+    "2021-day-06": "libs/2021/day-06",
+    "2021-day-07": "libs/2021/day-07",
+    "2021-day-08": "libs/2021/day-08",
+    "2021-day-09": "libs/2021/day-09",
+    "2021-day-10": "libs/2021/day-10",
+    "2021-day-11": "libs/2021/day-11",
+    "2021-day-12": "libs/2021/day-12",
+    "2021-day-13": "libs/2021/day-13",
+    "2021-day-14": "libs/2021/day-14"
   },
   "$schema": "./node_modules/nx/schemas/workspace-schema.json"
 }
