@@ -1,11 +1,6 @@
 {
   "version": 2,
   "projects": {
-    "plugin": "libs/plugin",
-    "plugin-e2e": "apps/plugin-e2e",
-    "util-arrays": "libs/util-arrays",
-    "util-graphs": "libs/util-graphs",
-    "util-math": "libs/util-math",
     "2021-day-01": "libs/2021/day-01",
     "2021-day-05": "libs/2021/day-05",
     "2021-day-06": "libs/2021/day-06",
@@ -16,7 +11,13 @@
     "2021-day-11": "libs/2021/day-11",
     "2021-day-12": "libs/2021/day-12",
     "2021-day-13": "libs/2021/day-13",
-    "2021-day-14": "libs/2021/day-14"
+    "2021-day-14": "libs/2021/day-14",
+    "plugin": "libs/plugin",
+    "plugin-e2e": "apps/plugin-e2e",
+    "util-arrays": "libs/util-arrays",
+    "util-graphs": "libs/util-graphs",
+    "util-math": "libs/util-math",
+    "year-2022-day-01": "libs/year-2022/day-01"
   },
   "$schema": "./node_modules/nx/schemas/workspace-schema.json"
 }
