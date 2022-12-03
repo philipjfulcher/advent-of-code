@@ -17,7 +17,8 @@
     "util-arrays": "libs/util-arrays",
     "util-graphs": "libs/util-graphs",
     "util-math": "libs/util-math",
-    "year-2022-day-01": "libs/year-2022/day-01"
+    "year-2022-day-01": "libs/year-2022/day-01",
+    "year-2022-day-02": "libs/year-2022/day-02"
   },
   "$schema": "./node_modules/nx/schemas/workspace-schema.json"
 }
