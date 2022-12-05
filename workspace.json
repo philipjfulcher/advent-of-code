@@ -19,7 +19,8 @@
     "util-math": "libs/util-math",
     "year-2022-day-01": "libs/year-2022/day-01",
     "year-2022-day-02": "libs/year-2022/day-02",
-    "year-2022-day-03": "libs/year-2022/day-03"
+    "year-2022-day-03": "libs/year-2022/day-03",
+    "year-2022-day-04": "libs/year-2022/day-04"
   },
   "$schema": "./node_modules/nx/schemas/workspace-schema.json"
 }

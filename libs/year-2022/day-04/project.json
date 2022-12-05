@@ -1,0 +1,28 @@
+{
+  "name": "year-2022-day-04",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/year-2022/day-04/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/year-2022/day-04/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/year-2022/day-04/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "run-puzzle": {
+      "executor": "@advent-of-code/plugin:run-puzzle",
+      "options": {}
+    }
+  },
+  "tags": ["type:day"]
+}
