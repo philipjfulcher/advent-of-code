@@ -222,7 +222,7 @@ export async function calculateAnswer(fileName: string) {
 
       const digitsWithUniqueNumbers = ['1', '4', '7'];
 
-      let sum = 0;
+      const sum = 0;
 
       entries.forEach((entry) => {
         const uniqueSignals = entry.uniqueSignals.split(' ');
@@ -280,9 +280,6 @@ export async function calculateAnswer(fileName: string) {
         });
 
         console.log({ overlappingSegments });
-
-        for (const overlappingSegment in overlappingSegments) {
-        }
 
         console.log(possibleMappings);
       });
