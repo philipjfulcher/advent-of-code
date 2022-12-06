@@ -2,7 +2,7 @@ export function simulateLanternFish(
   initialFish: number[],
   numberOfDays: number
 ) {
-  let fishInStages: Record<number, number> = {
+  const fishInStages: Record<number, number> = {
     0: 0,
     1: 0,
     2: 0,
