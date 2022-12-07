@@ -21,7 +21,8 @@
     "year-2022-day-02": "libs/year-2022/day-02",
     "year-2022-day-03": "libs/year-2022/day-03",
     "year-2022-day-04": "libs/year-2022/day-04",
-    "year-2022-day-05": "libs/year-2022/day-05"
+    "year-2022-day-05": "libs/year-2022/day-05",
+    "year-2022-day-06": "libs/year-2022/day-06"
   },
   "$schema": "./node_modules/nx/schemas/workspace-schema.json"
 }
