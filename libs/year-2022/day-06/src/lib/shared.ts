@@ -1,7 +1,4 @@
-export function findStartOfPacketMarker(
-  input: string,
-  markerLength: number = 4
-) {
+export function findStartOfPacketMarker(input: string, markerLength = 4) {
   let endOfMarkerIndex = markerLength - 1;
   for (let index = 0; index < input.length; index++) {
     endOfMarkerIndex++;
