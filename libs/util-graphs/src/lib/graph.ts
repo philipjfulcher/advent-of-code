@@ -50,6 +50,45 @@ export class Graph<Data = DefaultDataSchema> {
     }
   }
 
+  getDescendents(nodeId: string): Node<Data>[] {
+    const node = this.node(nodeId);
+
+    if (node) {
+      const connectedEdges = this.connectedEdges.get(nodeId);
+      if (connectedEdges && connectedEdges.length > 0) {
+        const edges = connectedEdges
+          .map((edgeId) => this.edge(edgeId))
+          .filter((edge) => !!edge)
+          .filter((edge) => edge?.source === nodeId);
+
+        return [node].concat(
+          ...edges.map((edge) => this.getDescendents(edge?.target as string))
+        );
+      } else {
+        return [node];
+      }
+    } else {
+      return [];
+    }
+  }
+
+  getParent(nodeId: string): Node<Data> | null {
+    const connectedEdges = this.connectedEdges.get(nodeId);
+
+    if (!connectedEdges || connectedEdges.length === 0) {
+      return null;
+    } else {
+      const edges = connectedEdges.map((edgeId) => this.edge(edgeId));
+      const parentEdge = edges.find((edge) => edge?.target === nodeId);
+
+      if (parentEdge) {
+        return this.node(parentEdge.source);
+      } else {
+        return null;
+      }
+    }
+  }
+
   shortestPath(sourceNodeId: string, targetNodeId: string) {
     return this.pathWithConstraint(
       sourceNodeId,
