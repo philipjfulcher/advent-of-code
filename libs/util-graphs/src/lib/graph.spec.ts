@@ -31,6 +31,86 @@ describe('graph', () => {
     expect(graph.edge('edge1')?.target).toEqual('node2');
   });
 
+  describe('getDescendents', () => {
+    it('should get descendents', () => {
+      const data: Element[] = [
+        { id: 'node1', type: 'node', data: {} },
+        { id: 'node2', type: 'node', data: {} },
+        { id: 'node3', type: 'node', data: {} },
+        { id: 'node4', type: 'node', data: {} },
+        { id: 'node5', type: 'node', data: {} },
+        {
+          id: 'edge1',
+          type: 'edge',
+          source: 'node1',
+          target: 'node2',
+          data: {},
+        },
+        {
+          id: 'edge2',
+          type: 'edge',
+          source: 'node1',
+          target: 'node3',
+          data: {},
+        },
+        {
+          id: 'edge3',
+          type: 'edge',
+          source: 'node2',
+          target: 'node5',
+          data: {},
+        },
+      ];
+
+      const graph = new Graph(data);
+
+      const descendents = graph.getDescendents('node1');
+      expect(
+        descendents.map((desc) => desc.id).sort((a, b) => a.localeCompare(b))
+      ).toEqual(['node1', 'node2', 'node3', 'node5']);
+    });
+  });
+
+  describe('getParent', () => {
+    it('should get parent', () => {
+      const data: Element[] = [
+        { id: 'node1', type: 'node', data: {} },
+        { id: 'node2', type: 'node', data: {} },
+        { id: 'node3', type: 'node', data: {} },
+        { id: 'node4', type: 'node', data: {} },
+        { id: 'node5', type: 'node', data: {} },
+        {
+          id: 'edge1',
+          type: 'edge',
+          source: 'node1',
+          target: 'node2',
+          data: {},
+        },
+        {
+          id: 'edge2',
+          type: 'edge',
+          source: 'node1',
+          target: 'node3',
+          data: {},
+        },
+        {
+          id: 'edge3',
+          type: 'edge',
+          source: 'node2',
+          target: 'node5',
+          data: {},
+        },
+      ];
+
+      const graph = new Graph(data);
+
+      expect(graph.getParent('node1')).toEqual(null);
+      expect(graph.getParent('node2')?.id).toEqual('node1');
+      expect(graph.getParent('node3')?.id).toEqual('node1');
+      expect(graph.getParent('node5')?.id).toEqual('node2');
+    });
+  });
+
   describe('shortestPath', () => {
     it('should find direct paths', () => {
       const data: Element[] = [
@@ -203,7 +283,6 @@ describe('graph', () => {
         (node1, node2, edge, path) => {
           //avoid the direct edge
           const cond = edge?.source !== 'node1' || edge?.target !== 'node3';
-          console.log({ node1, node2, edge, path, cond });
 
           return cond;
         }

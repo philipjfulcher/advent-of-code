@@ -32,6 +32,7 @@
       "@advent-of-code/2022/day-04": ["libs/year-2022/day-04/src/index.ts"],
       "@advent-of-code/2022/day-05": ["libs/year-2022/day-05/src/index.ts"],
       "@advent-of-code/2022/day-06": ["libs/year-2022/day-06/src/index.ts"],
+      "@advent-of-code/2022/day-07": ["libs/year-2022/day-07/src/index.ts"],
       "@advent-of-code/plugin": ["libs/plugin/src/index.ts"],
       "@advent-of-code/util-arrays": ["libs/util-arrays/src/index.ts"],
       "@advent-of-code/util-graphs": ["libs/util-graphs/src/index.ts"],
