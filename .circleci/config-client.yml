@@ -1,0 +1,99 @@
+version: 2.1
+
+orbs:
+  nx: nrwl/nx@1.6.1
+
+jobs:
+  install-dependencies:
+    docker:
+      - image: cimg/node:lts-browsers
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - node-modules-{{ .Environment.CIRCLE_NPM_CACHE_KEY }}-{{ checksum
+              "package-lock.json" }}
+      - run:
+          name: Install dependencies
+          command: |
+            npm install --no-save --legacy-peer-deps
+      - save_cache:
+          key: node-modules-{{ .Environment.CIRCLE_NPM_CACHE_KEY }}-{{ checksum
+            "package-lock.json" }}
+          paths:
+            - node_modules
+
+  agent:
+    docker:
+      - image: cimg/node:lts-browsers
+    parameters:
+      ordinal:
+        type: integer
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - node-modules-{{ .Environment.CIRCLE_NPM_CACHE_KEY }}-{{ checksum
+              "package-lock.json" }}
+      - run:
+          name: Start the agent << parameters.ordinal >>
+          command: npx nx-cloud start-agent
+          no_output_timeout: 60m
+  main:
+    docker:
+      - image: cimg/node:lts-browsers
+    environment:
+      NX_CLOUD_DISTRIBUTED_EXECUTION: 'true'
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - node-modules-{{ .Environment.CIRCLE_NPM_CACHE_KEY }}-{{ checksum
+              "package-lock.json" }}
+      - nx/set-shas:
+          allow-on-hold-workflow: true
+          workflow-name: setup
+      - run:
+          name: Initialize the Nx Cloud distributed CI run
+          command: npx nx-cloud start-ci-run --stop-agents-after="build"
+            --agent-count=10
+      - run:
+          name: Check format
+          command: npx nx-cloud record -- npx nx format:check --base=$NX_BASE
+            --head=$NX_HEAD
+      - run:
+          name: Run lint
+          command: npx nx affected --base=$NX_BASE --head=$NX_HEAD --target=lint
+            --parallel=10 --configuration=ci --force
+          no_output_timeout: 30m
+      - run:
+          name: Run test
+          command: npx nx affected --base=$NX_BASE --head=$NX_HEAD --target=test
+            --parallel=10 --ci --code-coverage
+          no_output_timeout: 30m
+      - run:
+          name: Run build
+          command:
+            npx nx affected --base=$NX_BASE --head=$NX_HEAD --target=build
+            --parallel=10
+          no_output_timeout: 30m
+      - run:
+          name: Stop all agents
+          command: npx nx-cloud stop-all-agents
+          when: always
+
+workflows:
+  ci:
+    jobs:
+      - install-dependencies
+      - agent:
+          name: Nx Cloud Agent << matrix.ordinal >>
+          matrix:
+            parameters:
+              ordinal: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+          requires:
+            - install-dependencies
+      - main:
+          name: Nx Cloud Main
+          requires:
+            - install-dependencies
