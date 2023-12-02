@@ -6,19 +6,25 @@ import {
   readProjectConfiguration,
   generateFiles,
   joinPathFragments,
-} from '@nrwl/devkit';
-import { libraryGenerator } from '@nrwl/node';
+} from '@nx/devkit';
+import { libraryGenerator } from '@nx/node';
 
 export default async function (tree: Tree, schema: any) {
-  const {year, day} = schema;
-  const dayZeroPad = day.toString().padStart(2, '0')
+  const { year, day } = schema;
+  const dayZeroPad = day.toString().padStart(2, '0');
   const projectName = `day-${dayZeroPad}`;
   const fullProjectName = `year-${year}-day-${dayZeroPad}`;
 
   const directory = `year-${year.toString()}`;
   const importPath = `@advent-of-code/${year.toString()}/day-${dayZeroPad}`;
-  console.log({projectName,directory,importPath})
-  await libraryGenerator(tree, { name: projectName, tags: 'type:day', compiler: 'tsc', directory, importPath,  });
+  console.log({ projectName, directory, importPath });
+  await libraryGenerator(tree, {
+    name: projectName,
+    tags: 'type:day',
+    compiler: 'tsc',
+    directory,
+    importPath,
+  });
   const projectConfig = readProjectConfiguration(tree, fullProjectName);
 
   updateProjectConfiguration(tree, fullProjectName, {

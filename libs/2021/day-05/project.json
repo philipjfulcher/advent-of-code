@@ -5,21 +5,15 @@
   "projectType": "library",
   "targets": {
     "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "libs/2021/day-05/**/*.ts"
-        ]
+        "lintFilePatterns": ["libs/2021/day-05/**/*.ts"]
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/libs/2021/day-05"
-      ],
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/libs/2021/day-05"],
       "options": {
         "jestConfig": "libs/2021/day-05/jest.config.ts",
         "passWithNoTests": true
@@ -30,7 +24,5 @@
       "options": {}
     }
   },
-  "tags": [
-    "year:2021"
-  ]
+  "tags": ["year:2021"]
 }

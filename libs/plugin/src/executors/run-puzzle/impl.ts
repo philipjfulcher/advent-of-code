@@ -1,4 +1,4 @@
-import { ExecutorContext } from '@nrwl/devkit';
+import { ExecutorContext } from '@nx/devkit';
 import { exec } from 'child_process';
 import { join } from 'path';
 import { promisify } from 'util';
