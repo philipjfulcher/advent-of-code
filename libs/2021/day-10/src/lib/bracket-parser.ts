@@ -54,6 +54,7 @@ function isOpeningBracket(bracket: string) {
   return openingBrackets.includes(bracket);
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function isClosingBracket(bracket: string) {
   return closingBrackets.includes(bracket);
 }
@@ -66,6 +67,7 @@ function getClosingBracket(bracket: string) {
   return closingBrackets[index];
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function getOpeningBracket(bracket: string) {
   const index = closingBrackets.findIndex((search) => search === bracket);
   return openingBrackets[index];

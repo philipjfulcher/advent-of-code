@@ -1,21 +1,27 @@
 import {
   getProjects,
-  readProjectConfiguration,
   joinPathFragments,
+  logger,
   Tree,
-  updateProjectConfiguration, logger,
-} from '@nrwl/devkit';
-import {ArchiveDaysGeneratorSchema} from './schema';
-import {moveGenerator} from "@nrwl/workspace";
+  updateProjectConfiguration,
+} from '@nx/devkit';
+import { ArchiveDaysGeneratorSchema } from './schema';
+import { moveGenerator } from '@nx/workspace';
 
-
-export default async function (tree: Tree, options: ArchiveDaysGeneratorSchema) {
-  const {year} = options;
+export default async function (
+  tree: Tree,
+  options: ArchiveDaysGeneratorSchema
+) {
+  const { year } = options;
   const projects = getProjects(tree);
   for (const [projectName, project] of projects) {
     logger.log(`Checking project ${projectName}`);
 
-    if (!projectName.startsWith("day") || project.tags.filter(tag => tag.startsWith('year')).length > 0) return;
+    if (
+      !projectName.startsWith('day') ||
+      project.tags.filter((tag) => tag.startsWith('year')).length > 0
+    )
+      return;
 
     console.log(`Archiving ${projectName}`);
     const destination = joinPathFragments(year.toString(), project.name);
@@ -23,7 +29,7 @@ export default async function (tree: Tree, options: ArchiveDaysGeneratorSchema) 
 
     updateProjectConfiguration(tree, project.name, {
       ...project,
-      tags: [`year:${year}`]
+      tags: [`year:${year}`],
     });
 
     await moveGenerator(tree, {
@@ -31,8 +37,7 @@ export default async function (tree: Tree, options: ArchiveDaysGeneratorSchema) 
       destination,
       updateImportPath: true,
       importPath,
-      skipFormat: true
+      skipFormat: true,
     });
   }
-
 }

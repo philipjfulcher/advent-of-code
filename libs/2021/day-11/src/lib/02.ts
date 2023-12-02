@@ -1,7 +1,7 @@
 import { createInterface } from 'readline';
 import { createReadStream } from 'fs';
 import { join } from 'path';
-import { calculateFirstSync, calculateOctopusEnergy } from './octopus';
+import { calculateFirstSync } from './octopus';
 
 export async function calculateAnswer(fileName: string) {
   const promise = new Promise((resolve) => {

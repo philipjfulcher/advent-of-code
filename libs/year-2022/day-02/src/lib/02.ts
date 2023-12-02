@@ -1,7 +1,14 @@
 import { createInterface } from 'readline';
 import { createReadStream } from 'fs';
 import { join } from 'path';
-import {  playGame, calculateGameScore, decrypt, decryptExercise2, getDesiredGamestate } from './interfaces'
+import {
+  calculateGameScore,
+  decrypt,
+  decryptExercise2,
+  getDesiredGamestate,
+  playGame,
+} from './interfaces';
+
 export async function calculateAnswer(fileName: string) {
   const promise = new Promise((resolve) => {
     console.log(`Reading from ${join(__dirname, fileName)}`);
@@ -16,11 +23,11 @@ export async function calculateAnswer(fileName: string) {
       const codes = line.split(' ');
       const opponent = decrypt[codes[0]];
       const desiredGamestate = decryptExercise2[codes[1]];
-      const player = getDesiredGamestate(opponent,desiredGamestate);
+      const player = getDesiredGamestate(opponent, desiredGamestate);
 
-      const gamestate = playGame(player,opponent);
-      const score = calculateGameScore(player,gamestate);
-      totalScore += calculateGameScore(player,gamestate);
+      const gamestate = playGame(player, opponent);
+      const score = calculateGameScore(player, gamestate);
+      totalScore += calculateGameScore(player, gamestate);
     });
 
     rl.on('close', () => {

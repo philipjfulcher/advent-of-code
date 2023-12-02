@@ -1,11 +1,4 @@
-import {
-  MachineConfig,
-  assign,
-  ActorRef,
-  spawn,
-  createMachine,
-  interpret,
-} from 'xstate';
+import { ActorRef, assign, createMachine, interpret, spawn } from 'xstate';
 
 // The events that the machine handles
 type FishEvent =
@@ -99,7 +92,7 @@ export function simulateLanternFish(
   }
 
   const snapshot = rootService.getSnapshot();
-  console.log('Counting fish...')
+  console.log('Counting fish...');
   return countFish(snapshot.context.fish);
 }
 

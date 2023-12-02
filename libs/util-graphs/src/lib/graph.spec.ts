@@ -1,4 +1,4 @@
-import { Edge, Node, Element } from './interfaces';
+import { Element } from './interfaces';
 import { Graph } from './graph';
 
 describe('graph', () => {

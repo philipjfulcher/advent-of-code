@@ -1,12 +1,7 @@
 import { createInterface } from 'readline';
 import { createReadStream } from 'fs';
 import { join } from 'path';
-import {
-  findContainedSet,
-  parsePair,
-  parseIdRange,
-  findOverlappingSet,
-} from './shared';
+import { findOverlappingSet, parseIdRange, parsePair } from './shared';
 
 export async function calculateAnswer(fileName: string) {
   const promise = new Promise((resolve) => {

@@ -1,4 +1,4 @@
-import { calculateMode, calculateMedian, calculateMean } from './average';
+import { calculateMean, calculateMedian, calculateMode } from './average';
 
 describe('average', () => {
   it('should calculate mode', () => {

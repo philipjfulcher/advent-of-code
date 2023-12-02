@@ -5,18 +5,17 @@
   "projectType": "library",
   "targets": {
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["libs/util-math/**/*.ts"]
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/libs/util-math"],
       "options": {
-        "jestConfig": "libs/util-math/jest.config.ts",
-        "passWithNoTests": true
+        "jestConfig": "libs/util-math/jest.config.ts"
       }
     }
   },

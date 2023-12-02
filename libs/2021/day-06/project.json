@@ -5,24 +5,17 @@
   "projectType": "library",
   "targets": {
     "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "libs/2021/day-06/**/*.ts"
-        ]
+        "lintFilePatterns": ["libs/2021/day-06/**/*.ts"]
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/libs/2021/day-06"
-      ],
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/libs/2021/day-06"],
       "options": {
-        "jestConfig": "libs/2021/day-06/jest.config.ts",
-        "passWithNoTests": true
+        "jestConfig": "libs/2021/day-06/jest.config.ts"
       }
     },
     "run-puzzle": {
@@ -30,7 +23,5 @@
       "options": {}
     }
   },
-  "tags": [
-    "year:2021"
-  ]
+  "tags": ["year:2021"]
 }

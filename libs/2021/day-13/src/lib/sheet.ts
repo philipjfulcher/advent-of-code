@@ -69,7 +69,7 @@ export class Sheet {
       const newMatrix = createMatrix<boolean>(
         this.createData(height, newWidth)
       );
-// console.log({width, height,newWidth});
+      // console.log({width, height,newWidth});
       const cols = this.matrix.getColumns();
 
       for (let forwardCol = 0; forwardCol < newWidth; forwardCol++) {
