@@ -38,7 +38,7 @@ export function runWorryFunction(input: number, worryFunction: string) {
 export function runRoundOfMonkeys(monkeys: Record<number, Monkey>, worryReduceFunction: (num: number) => number) {
   const totalItems = Object.values(monkeys).reduce( (acc,cur) => acc += cur.items.length, 0);
 
-  for(let monkeyId in monkeys) {
+  for(const monkeyId in monkeys) {
  //   console.log(`Checking monkey ${monkeyId}`);
     const monkey = monkeys[monkeyId];
 
@@ -47,7 +47,7 @@ export function runRoundOfMonkeys(monkeys: Record<number, Monkey>, worryReduceFu
      return worryReduceFunction(runWorryFunction(item,monkey.worryFunction));
     });
 
-    
+
     newItems.forEach(item => {
       monkey.itemsInspected++;
       if(item % monkey.testValue === 0) {
