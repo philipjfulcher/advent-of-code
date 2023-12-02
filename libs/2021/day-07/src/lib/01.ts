@@ -1,10 +1,7 @@
 import { createInterface } from 'readline';
 import { createReadStream } from 'fs';
 import { join } from 'path';
-import {
-  calculateMedian,
-  calculateMode,
-} from '@advent-of-code/util-math';
+import { calculateMedian, calculateMode } from '@advent-of-code/util-math';
 import { calculateFuelUse } from './calculate-fuel-use';
 
 export async function calculateAnswer(fileName: string) {

@@ -1,11 +1,7 @@
 import { createInterface } from 'readline';
 import { createReadStream } from 'fs';
 import { join } from 'path';
-import {
-  calculatePriority,
-  decodeContents,
-  findSharedContents,
-} from './shared';
+import { calculatePriority, findSharedContents } from './shared';
 
 export async function calculateAnswer(fileName: string) {
   const promise = new Promise((resolve) => {

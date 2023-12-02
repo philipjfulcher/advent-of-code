@@ -1,5 +1,4 @@
-import { Edge, Node, Element, DefaultDataSchema } from './interfaces';
-import { intersection } from '@advent-of-code/util-arrays';
+import { DefaultDataSchema, Edge, Element, Node } from './interfaces';
 
 export class Graph<Data = DefaultDataSchema> {
   private elements = new Map<string, Element<Data>>();

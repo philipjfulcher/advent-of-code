@@ -12,8 +12,7 @@ describe('day 012, exercise 01', () => {
 
     const evenBiggerResults = await calculateAnswer('test-input3.txt');
 
-    expect(evenBiggerResults).toEqual(226)
-
+    expect(evenBiggerResults).toEqual(226);
   });
 
   xit('should calculate the answer', async () => {

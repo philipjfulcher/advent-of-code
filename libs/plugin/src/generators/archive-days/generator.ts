@@ -1,10 +1,9 @@
 import {
   getProjects,
-  readProjectConfiguration,
   joinPathFragments,
+  logger,
   Tree,
   updateProjectConfiguration,
-  logger,
 } from '@nx/devkit';
 import { ArchiveDaysGeneratorSchema } from './schema';
 import { moveGenerator } from '@nx/workspace';

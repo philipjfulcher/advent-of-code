@@ -7,10 +7,7 @@ import {
   calculateMin,
   calculateMode,
 } from '@advent-of-code/util-math';
-import {
-  calculateFuelUse,
-  calculateIncreasedFuelUse,
-} from './calculate-fuel-use';
+import { calculateIncreasedFuelUse } from './calculate-fuel-use';
 
 export async function calculateAnswer(fileName: string) {
   const promise = new Promise((resolve) => {

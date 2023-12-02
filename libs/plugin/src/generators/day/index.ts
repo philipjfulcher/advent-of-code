@@ -1,15 +1,15 @@
 import {
-  Tree,
   formatFiles,
-  installPackagesTask,
-  updateProjectConfiguration,
-  readProjectConfiguration,
   generateFiles,
+  installPackagesTask,
   joinPathFragments,
+  readProjectConfiguration,
+  Tree,
+  updateProjectConfiguration,
 } from '@nx/devkit';
 import { libraryGenerator } from '@nx/node';
 
-export default async function (tree: Tree, schema: any) {
+export default async function (tree: Tree, schema) {
   const { year, day } = schema;
   const dayZeroPad = day.toString().padStart(2, '0');
   const projectName = `day-${dayZeroPad}`;

@@ -31,7 +31,7 @@ export async function calculateAnswer(
       const cells = grid.matrix.data.flat();
 
       const cellsWithCrossingLines = cells.filter((cell) => cell > 1).length;
-// console.log(visualization);
+      // console.log(visualization);
       resolve({ cellsWithCrossingLines, visualization });
     });
   });

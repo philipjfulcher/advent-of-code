@@ -15,8 +15,7 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/libs/util-math"],
       "options": {
-        "jestConfig": "libs/util-math/jest.config.ts",
-        "passWithNoTests": true
+        "jestConfig": "libs/util-math/jest.config.ts"
       }
     }
   },

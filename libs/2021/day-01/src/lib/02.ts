@@ -39,7 +39,7 @@ export async function calculateAnswer(fileName: string) {
           previousTotal = groupTotal;
         }
       });
-      
+
       resolve(increaseCount);
     });
   });

@@ -15,8 +15,7 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/libs/util-arrays"],
       "options": {
-        "jestConfig": "libs/util-arrays/jest.config.ts",
-        "passWithNoTests": true
+        "jestConfig": "libs/util-arrays/jest.config.ts"
       }
     }
   },

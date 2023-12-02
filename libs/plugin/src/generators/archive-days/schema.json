@@ -14,7 +14,5 @@
       "x-prompt": "What year should the untagged days be archived to?"
     }
   },
-  "required": [
-    "year"
-  ]
+  "required": ["year"]
 }

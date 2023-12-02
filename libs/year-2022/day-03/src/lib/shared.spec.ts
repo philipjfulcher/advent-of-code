@@ -1,6 +1,6 @@
 import {
-  decodeContents,
   calculatePriority,
+  decodeContents,
   findSharedContents,
 } from './shared';
 

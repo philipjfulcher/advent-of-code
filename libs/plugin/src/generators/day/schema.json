@@ -12,8 +12,5 @@
       "description": "Year"
     }
   },
-  "required": [
-    "day",
-    "year"
-  ]
+  "required": ["day", "year"]
 }

@@ -15,8 +15,7 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/libs/2021/day-07"],
       "options": {
-        "jestConfig": "libs/2021/day-07/jest.config.ts",
-        "passWithNoTests": true
+        "jestConfig": "libs/2021/day-07/jest.config.ts"
       }
     },
     "run-puzzle": {

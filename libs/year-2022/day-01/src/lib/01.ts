@@ -17,24 +17,26 @@ export async function calculateAnswer(fileName: string) {
     let currentHighCalorieCount = 0;
 
     rl.on('line', (line) => {
-      if(line === "") {
+      if (line === '') {
         elves.push(currentElfCalorieCount);
 
-        if(currentElfCalorieCount > currentHighCalorieCount) {
+        if (currentElfCalorieCount > currentHighCalorieCount) {
           currentHighCalorieCount = currentElfCalorieCount;
           currentHighCalorieCountElfId = currentElf;
         }
-          currentElf++;
-          currentElfCalorieCount = 0;
+        currentElf++;
+        currentElfCalorieCount = 0;
       } else {
         currentElfCalorieCount += Number.parseInt(line, 10);
       }
     });
 
     rl.on('close', () => {
-      const answer = currentHighCalorieCount; 
-      console.log(`The elf with the highest calorie count is elf ${currentHighCalorieCountElfId} with ${currentHighCalorieCount} calories.`)
-      console.log(`The answer is ${answer}`); 
+      const answer = currentHighCalorieCount;
+      console.log(
+        `The elf with the highest calorie count is elf ${currentHighCalorieCountElfId} with ${currentHighCalorieCount} calories.`
+      );
+      console.log(`The answer is ${answer}`);
 
       resolve(answer);
     });
