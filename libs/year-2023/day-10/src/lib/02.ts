@@ -1,0 +1,30 @@
+import { createInterface } from 'readline';
+import { createReadStream } from 'fs';
+import { join } from 'path';
+
+export async function calculateAnswer(fileName: string) {
+  const promise = new Promise((resolve) => {
+    console.log(`Reading from ${join(__dirname, fileName)}`);
+
+    const rl = createInterface({
+      input: createReadStream(join(__dirname, fileName)),
+    });
+
+    const lines: number[] = [];
+
+    rl.on('line', (line) => {
+      console.log(line);
+      lines.push(parseInt(line, 10));
+    });
+
+    rl.on('close', () => {
+      const answer = 0;
+
+      console.log(`The answer is ${answer}`);
+
+      resolve(0);
+    });
+  });
+
+  return promise;
+}
