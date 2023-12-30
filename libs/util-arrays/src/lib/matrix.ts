@@ -18,7 +18,7 @@ export interface Matrix<CellType> {
   getNeighborsForCell: (
     row: number,
     col: number
-  ) => { row: number; col: number; value: CellType,direction:string }[];
+  ) => { row: number; col: number; value: CellType; direction: string }[];
 }
 
 export function createMatrix<CellType>(data: CellType[][]): Matrix<CellType> {
@@ -55,10 +55,10 @@ export function createMatrix<CellType>(data: CellType[][]): Matrix<CellType> {
       return results;
     },
     getNeighborsForCell(this: Matrix<CellType>, row: number, col: number) {
-      const potentialNeighbors: [number,number,string][] = [
+      const potentialNeighbors: [number, number, string][] = [
         [row, col + 1, 'e'], // right
         [row, col - 1, 'w'], // left
-        [row - 1, col,'n'], // up
+        [row - 1, col, 'n'], // up
         [row + 1, col, 's'], // down
         [row + 1, col - 1, 'sw'], // diag down left
         [row - 1, col + 1, 'ne'], // diag up right
@@ -79,7 +79,7 @@ export function createMatrix<CellType>(data: CellType[][]): Matrix<CellType> {
       );
 
       return filteredNeighbors.map(([row, col, direction]) => {
-        return { row, col, value: this.getCellValue(row, col),direction };
+        return { row, col, value: this.getCellValue(row, col), direction };
       });
     },
     getCellValue: function (this: Matrix<CellType>, row: number, col: number) {

@@ -1,8 +1,8 @@
 import { createInterface } from 'readline';
 import { createReadStream } from 'fs';
 import { join } from 'path';
-import {createMatrix} from "@advent-of-code/util-arrays";
-import {findFarthestPointInLoop} from "./pipes";
+import { createMatrix } from '@advent-of-code/util-arrays';
+import { findFarthestPointInLoop } from './pipes';
 
 export async function calculateAnswer(fileName: string) {
   const promise = new Promise((resolve) => {
@@ -15,7 +15,7 @@ export async function calculateAnswer(fileName: string) {
     const lines: string[][] = [];
 
     rl.on('line', (line) => {
-      lines.push(line.split(""));
+      lines.push(line.split(''));
     });
 
     rl.on('close', () => {
