@@ -18,7 +18,7 @@ export interface Matrix<CellType> {
   getNeighborsForCell: (
     row: number,
     col: number
-  ) => { row: number; col: number; value: CellType }[];
+  ) => { row: number; col: number; value: CellType; direction: string }[];
 }
 
 export function createMatrix<CellType>(data: CellType[][]): Matrix<CellType> {
@@ -55,15 +55,15 @@ export function createMatrix<CellType>(data: CellType[][]): Matrix<CellType> {
       return results;
     },
     getNeighborsForCell(this: Matrix<CellType>, row: number, col: number) {
-      const potentialNeighbors = [
-        [row, col + 1], // right
-        [row, col - 1], // left
-        [row - 1, col], // up
-        [row + 1, col], // down
-        [row + 1, col - 1], // diag down left
-        [row - 1, col + 1], // diag up right
-        [row + 1, col + 1], // diag down right
-        [row - 1, col - 1], // diag up left
+      const potentialNeighbors: [number, number, string][] = [
+        [row, col + 1, 'e'], // right
+        [row, col - 1, 'w'], // left
+        [row - 1, col, 'n'], // up
+        [row + 1, col, 's'], // down
+        [row + 1, col - 1, 'sw'], // diag down left
+        [row - 1, col + 1, 'ne'], // diag up right
+        [row + 1, col + 1, 'se'], // diag down right
+        [row - 1, col - 1, 'nw'], // diag up left
       ];
       // console.log(potentialNeighbors);
       const filteredNeighbors = potentialNeighbors.filter(
@@ -78,8 +78,8 @@ export function createMatrix<CellType>(data: CellType[][]): Matrix<CellType> {
         }
       );
 
-      return filteredNeighbors.map(([row, col]) => {
-        return { row, col, value: this.getCellValue(row, col) };
+      return filteredNeighbors.map(([row, col, direction]) => {
+        return { row, col, value: this.getCellValue(row, col), direction };
       });
     },
     getCellValue: function (this: Matrix<CellType>, row: number, col: number) {
