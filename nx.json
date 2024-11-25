@@ -36,9 +36,7 @@
     ]
   },
   "nxCloudAccessToken": "NzE5ZGI2ODctNTFiMi00YzAwLTkxODktYmY0NGMzMWI5Y2EwfHJlYWQ=",
-  "useInferencePlugins": false,
   "defaultBase": "main",
-  "useLegacyCache": true,
   "plugins": [
     {
       "plugin": "@nx/eslint/plugin",
