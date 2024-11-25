@@ -1,9 +1,8 @@
 {
-  "$schema": "http://json-schema.org/schema",
   "executors": {
     "run-puzzle": {
       "implementation": "./src/executors/run-puzzle/impl",
-      "schema": "./src/executors/run-puzzle/executor.json",
+      "schema": "./src/executors/run-puzzle/schema.json",
       "description": "Run a given puzzle"
     }
   }

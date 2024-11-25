@@ -3,11 +3,8 @@
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/year-2022/day-02/src",
   "projectType": "library",
+  "tags": ["type:day"],
   "targets": {
-    "lint": {
-      "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"]
-    },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
@@ -19,6 +16,5 @@
       "executor": "@advent-of-code/plugin:run-puzzle",
       "options": {}
     }
-  },
-  "tags": ["type:day"]
+  }
 }

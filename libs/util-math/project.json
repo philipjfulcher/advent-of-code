@@ -3,11 +3,8 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/util-math/src",
   "projectType": "library",
+  "tags": [],
   "targets": {
-    "lint": {
-      "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"]
-    },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/libs/util-math"],
@@ -15,6 +12,5 @@
         "jestConfig": "libs/util-math/jest.config.ts"
       }
     }
-  },
-  "tags": []
+  }
 }
