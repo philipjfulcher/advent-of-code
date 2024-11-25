@@ -45,6 +45,55 @@
       "options": {
         "targetName": "lint"
       }
+    },
+    {
+      "plugin": "@nx/jest/plugin",
+      "options": {
+        "targetName": "e2e"
+      },
+      "include": ["apps/plugin-e2e/**/*"]
+    },
+    {
+      "plugin": "@nx/jest/plugin",
+      "options": {
+        "targetName": "test"
+      },
+      "include": [
+        "libs/2021/day-01/**/*",
+        "libs/2021/day-05/**/*",
+        "libs/2021/day-06/**/*",
+        "libs/2021/day-07/**/*",
+        "libs/2021/day-08/**/*",
+        "libs/2021/day-09/**/*",
+        "libs/2021/day-10/**/*",
+        "libs/2021/day-11/**/*",
+        "libs/2021/day-12/**/*",
+        "libs/2021/day-13/**/*",
+        "libs/2021/day-14/**/*",
+        "libs/plugin/**/*",
+        "libs/util-arrays/**/*",
+        "libs/util-graphs/**/*",
+        "libs/util-math/**/*",
+        "libs/year-2022/day-01/**/*",
+        "libs/year-2022/day-02/**/*",
+        "libs/year-2022/day-03/**/*",
+        "libs/year-2022/day-04/**/*",
+        "libs/year-2022/day-05/**/*",
+        "libs/year-2022/day-06/**/*",
+        "libs/year-2022/day-07/**/*",
+        "libs/year-2022/day-11/**/*",
+        "libs/year-2023/day-01/**/*",
+        "libs/year-2023/day-02/**/*",
+        "libs/year-2023/day-03/**/*",
+        "libs/year-2023/day-04/**/*",
+        "libs/year-2023/day-05/**/*",
+        "libs/year-2023/day-06/**/*",
+        "libs/year-2023/day-07/**/*",
+        "libs/year-2023/day-08/**/*",
+        "libs/year-2023/day-09/**/*",
+        "libs/year-2023/day-10/**/*",
+        "libs/year-2023/day-11/**/*"
+      ]
     }
   ]
 }

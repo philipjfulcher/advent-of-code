@@ -6,10 +6,14 @@
   "tags": ["year:2021"],
   "targets": {
     "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/libs/2021/day-12"],
       "options": {
-        "jestConfig": "libs/2021/day-12/jest.config.ts"
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "coverage": true
+        }
       }
     },
     "run-puzzle": {
