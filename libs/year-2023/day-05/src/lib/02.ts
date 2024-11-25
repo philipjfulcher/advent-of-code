@@ -37,7 +37,7 @@ export async function calculateAnswer(fileName: string) {
       maps.push(parseAlmanacLines(currentLines));
       maps.reverse();
 
-      let minLocation: number = Infinity;
+      let minLocation = Infinity;
       const seedRanges = pairwise(seeds).map((seedRange) => [
         Number.parseInt(seedRange[0], 10),
         Number.parseInt(seedRange[0], 10) + Number.parseInt(seedRange[1]) - 1,
