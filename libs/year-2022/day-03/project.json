@@ -3,25 +3,22 @@
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/year-2022/day-03/src",
   "projectType": "library",
+  "tags": ["type:day"],
   "targets": {
-    "lint": {
-      "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/year-2022/day-03/**/*.ts"]
-      }
-    },
     "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "libs/year-2022/day-03/jest.config.ts"
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "coverage": true
+        }
       }
     },
     "run-puzzle": {
       "executor": "@advent-of-code/plugin:run-puzzle",
       "options": {}
     }
-  },
-  "tags": ["type:day"]
+  }
 }

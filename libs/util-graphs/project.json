@@ -3,21 +3,18 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/util-graphs/src",
   "projectType": "library",
+  "tags": [],
   "targets": {
-    "lint": {
-      "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/util-graphs/**/*.ts"]
-      }
-    },
     "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/libs/util-graphs"],
       "options": {
-        "jestConfig": "libs/util-graphs/jest.config.ts"
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "coverage": true
+        }
       }
     }
-  },
-  "tags": []
+  }
 }

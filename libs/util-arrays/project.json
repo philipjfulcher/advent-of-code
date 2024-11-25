@@ -3,21 +3,18 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/util-arrays/src",
   "projectType": "library",
+  "tags": ["type:util"],
   "targets": {
-    "lint": {
-      "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/util-arrays/**/*.ts"]
-      }
-    },
     "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/libs/util-arrays"],
       "options": {
-        "jestConfig": "libs/util-arrays/jest.config.ts"
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "coverage": true
+        }
       }
     }
-  },
-  "tags": ["type:util"]
+  }
 }

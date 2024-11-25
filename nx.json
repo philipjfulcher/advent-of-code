@@ -1,15 +1,8 @@
 {
-  "affected": {
-    "defaultBase": "main"
-  },
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "targetDefaults": {
     "build": {
       "dependsOn": ["^build"],
-      "cache": true
-    },
-    "lint": {
-      "inputs": ["default", "{workspaceRoot}/.eslintrc.json"],
       "cache": true
     },
     "@nx/jest:jest": {
@@ -24,11 +17,15 @@
           "codeCoverage": true
         }
       }
+    },
+    "@nx/eslint:lint": {
+      "inputs": ["default", "{workspaceRoot}/.eslintrc.json"],
+      "cache": true
     }
   },
   "namedInputs": {
     "default": ["{projectRoot}/**/*", "sharedGlobals"],
-    "sharedGlobals": [],
+    "sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"],
     "production": [
       "default",
       "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
@@ -38,5 +35,63 @@
       "!{projectRoot}/src/test-setup.[jt]s"
     ]
   },
-  "nxCloudAccessToken": "NzE5ZGI2ODctNTFiMi00YzAwLTkxODktYmY0NGMzMWI5Y2EwfHJlYWQ="
+  "nxCloudAccessToken": "NzE5ZGI2ODctNTFiMi00YzAwLTkxODktYmY0NGMzMWI5Y2EwfHJlYWQ=",
+  "defaultBase": "main",
+  "plugins": [
+    {
+      "plugin": "@nx/eslint/plugin",
+      "options": {
+        "targetName": "lint"
+      }
+    },
+    {
+      "plugin": "@nx/jest/plugin",
+      "options": {
+        "targetName": "e2e"
+      },
+      "include": ["apps/plugin-e2e/**/*"]
+    },
+    {
+      "plugin": "@nx/jest/plugin",
+      "options": {
+        "targetName": "test"
+      },
+      "include": [
+        "libs/2021/day-01/**/*",
+        "libs/2021/day-05/**/*",
+        "libs/2021/day-06/**/*",
+        "libs/2021/day-07/**/*",
+        "libs/2021/day-08/**/*",
+        "libs/2021/day-09/**/*",
+        "libs/2021/day-10/**/*",
+        "libs/2021/day-11/**/*",
+        "libs/2021/day-12/**/*",
+        "libs/2021/day-13/**/*",
+        "libs/2021/day-14/**/*",
+        "libs/plugin/**/*",
+        "libs/util-arrays/**/*",
+        "libs/util-graphs/**/*",
+        "libs/util-math/**/*",
+        "libs/year-2022/day-01/**/*",
+        "libs/year-2022/day-02/**/*",
+        "libs/year-2022/day-03/**/*",
+        "libs/year-2022/day-04/**/*",
+        "libs/year-2022/day-05/**/*",
+        "libs/year-2022/day-06/**/*",
+        "libs/year-2022/day-07/**/*",
+        "libs/year-2022/day-11/**/*",
+        "libs/year-2023/day-01/**/*",
+        "libs/year-2023/day-02/**/*",
+        "libs/year-2023/day-03/**/*",
+        "libs/year-2023/day-04/**/*",
+        "libs/year-2023/day-05/**/*",
+        "libs/year-2023/day-06/**/*",
+        "libs/year-2023/day-07/**/*",
+        "libs/year-2023/day-08/**/*",
+        "libs/year-2023/day-09/**/*",
+        "libs/year-2023/day-10/**/*",
+        "libs/year-2023/day-11/**/*"
+      ]
+    }
+  ]
 }

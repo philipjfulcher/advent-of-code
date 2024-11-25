@@ -11,7 +11,7 @@ export default async function echoExecutor(
   options: EchoExecutorOptions,
   context: ExecutorContext
 ) {
-  const projectConfig = context.workspace.projects[context.projectName];
+  const projectConfig = context.projectsConfigurations[context.projectName];
   console.info(
     `Running puzzle ${options.puzzle} for ${context.projectName}...`
   );
