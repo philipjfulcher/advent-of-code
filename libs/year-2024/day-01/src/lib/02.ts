@@ -10,19 +10,27 @@ export async function calculateAnswer(fileName: string) {
       input: createReadStream(join(__dirname, fileName)),
     });
 
-    const lines: number[] = [];
+    const left: number[] = [];
+    const right: number[] = [];
 
     rl.on('line', (line) => {
-      console.log(line);
-      lines.push(parseInt(line, 10));
+      const columns = line.split('   ');
+      left.push(parseInt(columns[0], 10));
+      right.push(parseInt(columns[1], 10));
     });
 
     rl.on('close', () => {
-      const answer = 0;
+      let answer = 0;
+
+      left.forEach((val,index) => {
+        const appears = right.filter(rightVal => rightVal === val).length;
+        answer += val * appears;
+
+      })
 
       console.log(`The answer is ${answer}`);
 
-      resolve(0);
+      resolve(answer);
     });
   });
 
