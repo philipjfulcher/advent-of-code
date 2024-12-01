@@ -15,11 +15,11 @@ export default async function (tree: Tree, schema) {
   const projectName = `day-${dayZeroPad}`;
   const fullProjectName = `year-${year}-day-${dayZeroPad}`;
 
-  const directory = `year-${year.toString()}`;
+  const directory = `libs/year-${year.toString()}/${projectName}`;
   const importPath = `@advent-of-code/${year.toString()}/day-${dayZeroPad}`;
   console.log({ projectName, directory, importPath });
   await libraryGenerator(tree, {
-    name: projectName,
+    name: fullProjectName,
     tags: 'type:day',
     compiler: 'tsc',
     directory,
