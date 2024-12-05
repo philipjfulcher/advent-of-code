@@ -15,6 +15,7 @@ export interface Matrix<CellType> {
 
   getColumns: () => CellType[][];
   getRows: () => CellType[][];
+  getDiagonals: () => CellType[][];
   getNeighborsForCell: (
     row: number,
     col: number
@@ -96,8 +97,6 @@ export function createMatrix<CellType>(data: CellType[][]): Matrix<CellType> {
       const numRows = data.length;
       const numCols = data[0].length;
 
-      //   console.log({numRows,numCols})
-
       const columns: CellType[][] = [];
 
       for (let col = 0; col < numCols; col++) {
@@ -111,6 +110,52 @@ export function createMatrix<CellType>(data: CellType[][]): Matrix<CellType> {
       }
 
       return columns;
+    },
+    getDiagonals: function (this: Matrix<CellType>) {
+      const numRows = data.length;
+      const numCols = data[0].length;
+
+      const diagonals: CellType[][] = [];
+
+      for (let col = 0; col < numCols; col++) {
+        const diagonal: CellType[] = [];
+
+        for (let cell = 0; cell < numRows && col + cell < numCols; cell++) {
+          // console.log(`${cell},${col+cell}`);
+          diagonal.push(this.data[cell][col + cell]);
+        }
+        diagonals.push(diagonal);
+      }
+
+      for (let col = numCols - 1; col >= 0; col--) {
+        const diagonal: CellType[] = [];
+
+        for (let cell = 0; cell < numRows && col - cell >= 0; cell++) {
+          // console.log(`${cell},${col-cell}`);
+          diagonal.push(this.data[cell][col - cell]);
+        }
+        diagonals.push(diagonal);
+      }
+
+      for (let row = 1; row < numRows; row++) {
+        const diagonal: CellType[] = [];
+
+        for (let cell = 0; cell < numCols && row + cell < numRows; cell++) {
+          // console.log(`${row+cell},${cell}`);
+          diagonal.push(this.data[row + cell][cell]);
+        }
+        diagonals.push(diagonal);
+      }
+
+      for (let row = 1; row < numRows; row++) {
+        const diagonal: CellType[] = [];
+        for (let cell = numCols - 1; cell >= 0 && cell - row >= 0; cell--) {
+          diagonal.push(this.data[row + (numCols - 1 - cell)][cell]);
+        }
+        diagonals.push(diagonal);
+      }
+
+      return diagonals;
     },
   };
 }
