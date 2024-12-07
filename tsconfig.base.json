@@ -48,6 +48,7 @@
       "@advent-of-code/2024/day-01": ["libs/year-2024/day-01/src/index.ts"],
       "@advent-of-code/2024/day-02": ["libs/year-2024/day-02/src/index.ts"],
       "@advent-of-code/2024/day-03": ["libs/year-2024/day-03/src/index.ts"],
+      "@advent-of-code/2024/day-04": ["libs/year-2024/day-04/src/index.ts"],
       "@advent-of-code/plugin": ["libs/plugin/src/index.ts"],
       "@advent-of-code/util-arrays": ["libs/util-arrays/src/index.ts"],
       "@advent-of-code/util-graphs": ["libs/util-graphs/src/index.ts"],
