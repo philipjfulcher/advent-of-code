@@ -1,4 +1,4 @@
-import {calculateAnswer, solveEquation} from './01';
+import { calculateAnswer, solveEquation } from './01';
 
 describe.skip('day 07, exercise 01', () => {
   it('should calculate the answer in test data', async () => {
@@ -20,5 +20,5 @@ describe.skip('solveEquation', () => {
     expect(solveEquation([81, '+', 40, '*', 27])).toEqual(3267);
     expect(solveEquation([81, '*', 40, '+', 27])).toEqual(3267);
     expect(solveEquation([11, '+', 6, '*', 16, '+', 20])).toEqual(292);
-  })
-})
+  });
+});

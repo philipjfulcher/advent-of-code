@@ -1,6 +1,6 @@
-import {createInterface} from 'readline';
-import {createReadStream} from 'fs';
-import {join} from 'path';
+import { createInterface } from 'readline';
+import { createReadStream } from 'fs';
+import { join } from 'path';
 
 export async function calculateAnswer(fileName: string) {
   const promise = new Promise((resolve) => {
@@ -14,18 +14,24 @@ export async function calculateAnswer(fileName: string) {
 
     rl.on('line', (line) => {
       const [result, operands] = line.split(': ');
-      const separateOperands = operands.split(' ').map(operand => parseInt(operand, 10));
+      const separateOperands = operands
+        .split(' ')
+        .map((operand) => parseInt(operand, 10));
       equations.push([parseInt(result, 10)].concat(separateOperands));
     });
 
     rl.on('close', () => {
       let answer = 0;
-      equations.forEach(equation => {
+      equations.forEach((equation) => {
         const [result, ...operands] = equation;
         const possibleSolutions: EquationParts[] = [];
 
-        for(let possibleCounter =0; possibleCounter < Math.pow(2, operands.length - 1); possibleCounter++) {
-          possibleSolutions.push([])
+        for (
+          let possibleCounter = 0;
+          possibleCounter < Math.pow(2, operands.length - 1);
+          possibleCounter++
+        ) {
+          possibleSolutions.push([]);
         }
         // console.log({operands});
         operands.forEach((operand, oIndex) => {
@@ -34,14 +40,12 @@ export async function calculateAnswer(fileName: string) {
 
           for (let i = 0; i < possibleSolutions.length; i++) {
             possibleSolutions[i].push(operand);
-            if(operand !== operands.at(-1)) {
+            if (operand !== operands.at(-1)) {
               // console.log(i, (i+1) % 2)
-              if(oIndex % 2 === 0) {
+              if (oIndex % 2 === 0) {
                 possibleSolutions[i].push('*');
-
               } else {
                 possibleSolutions[i].push('+');
-
               }
             }
             //
@@ -53,19 +57,18 @@ export async function calculateAnswer(fileName: string) {
           }
           // console.log({post: possibleSolutions})
 
-          if(possibleSolutions.some(possibleSolution => solveEquation(possibleSolution) === result)) {
-            console.log(`${result} has a valid answer`)
+          if (
+            possibleSolutions.some(
+              (possibleSolution) => solveEquation(possibleSolution) === result
+            )
+          ) {
+            console.log(`${result} has a valid answer`);
             answer += result;
           }
+        });
 
-        })
-
-
-        console.log({possibleSolutions})
-
-
-      })
-
+        console.log({ possibleSolutions });
+      });
 
       console.log(`The answer is ${answer}`);
 
@@ -82,12 +85,12 @@ export function solveEquation(parts: EquationParts) {
   let total = 0;
   let currentOperator: '*' | '+';
   let previousNumber: number;
-  parts.forEach(part => {
+  parts.forEach((part) => {
     if (part === '*' || part === '+') {
       currentOperator = part;
     } else {
       if (previousNumber && currentOperator) {
-        if (currentOperator === "+") {
+        if (currentOperator === '+') {
           total = previousNumber + part;
         } else {
           total = previousNumber * part;
@@ -95,7 +98,6 @@ export function solveEquation(parts: EquationParts) {
 
         previousNumber = total;
         currentOperator = undefined;
-
       } else {
         previousNumber = part;
       }
