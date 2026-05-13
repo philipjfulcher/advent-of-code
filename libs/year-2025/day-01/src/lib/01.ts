@@ -49,14 +49,12 @@ export function turnDial(
 ) {
   let end = direction === 'R' ? start + distance : start - distance;
 
-  if (end < min) {
-    while (end < min) {
-      end += max + 1;
-    }
-  } else if (end > max) {
-    while (end > max) {
-      end = min + (end - max) - 1;
-    }
+  while (end < min) {
+    end += max + 1;
+  }
+
+  while (end > max) {
+    end = min + (end - max) - 1;
   }
 
   return end;
